@@ -1,0 +1,92 @@
+<!Doctype html>
+<html>
+<head>
+    <title>Welcome SecureFiles</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/passwordscheck.css" />
+    <style type="text/css">
+    	body {
+			    background: url('../static/images/bg1.jpg');
+			    background-repeat: no-repeat;
+			    background-position: center center;
+			    background-attachment: fixed;
+			    -webkit-background-size: cover;
+			    -moz-background-size: cover;
+			    -o-background-size: cover;
+			    background-size: cover;
+			    color: white;
+			}
+    </style>
+</head>
+<body>
+<div class='container'>
+	<div class="page-header">
+	  <h1>SecureFiles <small>Transfer Your Files Securely...</small></h1>
+	</div>
+	<form action="" method=post enctype=multipart/form-data>
+	<div class="row">
+		<div class="col-lg-6 col-sm-6 col-12">
+            <h4>Select File</h4>
+            <div class="input-group">
+                <input type="file" name="file" class="filestyle form-control" data-buttonName="btn-primary" data-placeholder="No file selected">
+            </div>
+        </div>
+	</div>
+	<div class="row">
+		<div class="col-lg-6 col-sm-6 col-12" style="margin-top: 20px;">
+            <h4>Secure Password</h4>
+            <div class="input-group">
+		      <input type="Password" id="password" name="pass" class="form-control" placeholder="Your Password">
+		      <span class="input-group-btn">
+		        <button class="btn btn-primary" type="submit">Upload !</button>
+		      </span>
+		    </div>
+		    <p style="margin-top: 5px" id="result"></p>
+        </div>
+	</div>
+	</form>
+	<div id="dispanel" class="row" style="margin-top: 100px;">
+	<div class="col-md-12">
+	<div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h3 class="panel-title">Use this URL to download your file.</h3>
+	  </div>
+	  <div class="panel-body">
+	    <a id="disurl" href="{{ file_url }}">{{ file_url }}</a>
+	  </div>
+	</div>
+	</div></div>
+		
+	
+	<div class="navbar navbar-default navbar-fixed-bottom">
+		<div class="row" style="color: black;">
+			<div class="col-md-6" style="text-align: left; padding: 10px 0 10px 40px;">
+				<span>SecureFiles &copy 2017</span>
+			</div>
+			<div class="col-md-6" style="text-align: right; padding: 10px 40px 10px 0;">
+				<span>Made by <b>Campers Team</b></span>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.0/jquery.min.js" integrity="sha256-JAW99MJVpJBGcbzEuXk4Az05s/XyDdBomFqNlM3ic+I=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="../static/js/bootstrap-filestyle.min.js"></script>
+<script src="../static/js/passwordscheck.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		if($("#disurl").attr("href") == "None")
+			$("#dispanel").hide();
+		else
+			$("#dispanel").show(2000);
+	});
+</script>
+</body>
+</html>
+    <!--<h1>Upload new File</h1>
+    <form action="" method=post enctype=multipart/form-data>
+      <p><input type="text" name="pass"><br />
+         <input type=file name=file>
+         <input type=submit value=Upload>
+    </form>
+    <p><a href="{{ file_url }}">{{ file_url }}</a></p>

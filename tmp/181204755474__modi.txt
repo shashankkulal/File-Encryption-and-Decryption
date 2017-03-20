@@ -1,0 +1,6 @@
+/home/kotamodi/public_html/
+/home/kotamodi/public_html
+home/kotamodi/public_html/
+/home/kotamodi/public_html/images
+/home/kotamodi/public_html/images/
+/home/kotamodi/public_html/images/gallery/
