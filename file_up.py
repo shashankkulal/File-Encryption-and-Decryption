@@ -96,7 +96,8 @@ def download():
         print("Verified")
         return send_from_directory(directory='tmp', filename=filename, as_attachment=True)
     else:
-        os.remove(filename)
+        if os.path.exists(filename):
+            os.remove(filename)
         return "Password Wrong.."
 
 
